@@ -1,6 +1,4 @@
-package FinalProject;
-
-
+import java.util.Scanner;
 /**
  * Write a description of class CalculatorRunner here.
  *
@@ -9,27 +7,14 @@ package FinalProject;
  */
 public class CalculatorRunner
 {
-    // instance variables - replace the example below with your own
-    private int x;
-
-    /**
-     * Constructor for objects of class CalculatorRunner
-     */
-    public CalculatorRunner()
+    public static void main(String[] args)
     {
-        // initialise instance variables
-        x = 0;
-    }
-
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
+        Scanner input = new Scanner(System.in);
+        System.out.print("What was your unweighted GPA, your highest SAT score, and the number of AP classes you have taken?");
+        double newGpa = input.nextDouble();
+        int newSATScore = input.nextInt();
+        int newNumOfAps = input.nextInt();
+        Student me = new Student(newGpa, newSATScore, newNumOfAps);
+        
     }
 }

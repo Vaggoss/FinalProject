@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.target=Colleges
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Colleges\ here.\r\n\r\n\ @author\ (Jonathan\ and\ Daniel)\r\n\ @version\ (What\ ever\ you\ want\ it\ to\ be\ ;))\r\n
+comment1.params=theGpa\ theSATScore\ theNumOfAPs
+comment1.target=Colleges(double,\ int,\ int)
+comment2.params=
+comment2.target=void\ GpaCalculator()
+comment3.params=
+comment3.target=void\ ApCalculator()
+comment4.params=
+comment4.target=void\ SATCalculator()
+comment5.params=
+comment5.target=java.lang.String\ RightFit()
+numComments=6

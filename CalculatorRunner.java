@@ -10,11 +10,16 @@ public class CalculatorRunner
     public static void main(String[] args)
     {
         Scanner input = new Scanner(System.in);
-        System.out.print("What was your unweighted GPA, your highest SAT score, and the number of AP classes you have taken?");
+        System.out.print("What was your weighted GPA?");
         double newGpa = input.nextDouble();
+        System.out.print("What was your highest SAT score?");
         int newSATScore = input.nextInt();
+        System.out.print("How many AP classes you have taken?");
         int newNumOfAps = input.nextInt();
-        Student me = new Student(newGpa, newSATScore, newNumOfAps);
-        
+        Colleges fit = new Colleges(newGpa, newSATScore, newNumOfAps);
+        fit.GpaCalculator();
+        fit.ApCalculator();
+        fit.SATCalculator();
+        System.out.println(fit.RightFit());
     }
 }

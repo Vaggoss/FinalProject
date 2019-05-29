@@ -17,17 +17,23 @@ public class Colleges
     private double gpa;
     private int SATScore;
     private int numOfAps;
-    public Colleges(double theGpa, int theSATScore, int theNumOfAPs)
+    private int communityService;
+    private boolean essays;
+    private boolean specialTrait;
+    public Colleges(double theGpa, int theSATScore, int theNumOfAPs, int theCommunityService, boolean theSpecialTrait, boolean theEssays)
     {
         // initialise instance variables
         gpa = theGpa;
         SATScore = theSATScore;
         numOfAps = theNumOfAPs;
+        communityService = theCommunityService;
+        essays = theEssays;
+        specialTrait = theSpecialTrait;
     }
     
     public void GpaCalculator()
     {
-        if(gpa >= 4.18)
+        if(gpa >= 4.30)
         {
             stanford ++;
         }
@@ -44,6 +50,26 @@ public class Colleges
             UCM ++;
         }
     }
+    
+      public void Essays()
+      {
+         if(essays == true)
+         {
+            stanford++;
+            UCSD++;
+            UCM++;
+         }
+       }
+       
+        public void SpecialTrait()
+      {
+         if(specialTrait == true)
+         {
+            stanford++;
+            UCSD++;
+            UCM++;
+         }
+       }
     
       public void ApCalculator()
        {
@@ -92,31 +118,56 @@ public class Colleges
         }
 
 
+    }
+       
+       public void CommunityServiceCalculator()
+    {
+        if( communityService >= 300)
+       {
+           stanford ++;
        }
-  public String RightFit()
+       if(communityService <= 299 && communityService >= 200)
+       {
+           UCSD ++;
+        }
+       if(communityService <= 199 && communityService >=180)
+       {
+         SDSU++;  
+        }
+       if(communityService <= 30 && communityService >= 179)
+       {
+         UCM ++;
+       }
+       if(communityService >= 0)
+       {
+           southwestern ++;
+        }
+    }
+       
+    public String RightFit()
        {
          if(stanford >= UCSD && stanford > SDSU && stanford > UCM && stanford > southwestern)
          {
-             return "Okay you can  make it to Stanford, but keep in mind it is a dream scchool for everyone.";
+             return "Stanford. (Although if we are being honest this is a dream scchool for everyone. If you truly desreve to get admitted in here you must have done something amazing besides get good grades.)";
          }
          if(UCSD >= UCM && UCSD > SDSU && UCSD > southwestern)
          {
-             return "Bro UCSD is also an amazing school. Still prettey hard to get into, so put in a safety school just in case ";
+             return "UCSD. (If you are unhappy with this response then go prove us wrong and get accepted somewhere even better. Although at this point the quality of education you are geting is already some of the best in the world).";
          }
          if(UCM >= SDSU && UCM > southwestern)
          {
-             return "Hey, UC Merced is part of the UC system. A great school that will only get better the more time passes";
+             return "UC Merced. (Okay bud, Merced is cool and all, but UCSD though. I'm just saying)";
          }
          if(SDSU >= southwestern)
          {
-             return "SDSU SDSU SDSU SDSU SDSU. Great school, great education, low tution cost, local. Overall a prettey good deal.";
+             return "SDSU. (For those of you thinking we used compact for success numbers, your dead wrong. We used numbers from people who don't have the luxury of compact for success. Thank you and good day.)";
          }
          else{
-             return "A respectable option when trying to save money. In the end, the degree you get will be coming from whatever school you transfer. ";
+             return "Southwestern college. (Hey man if this calculation is true then know that this will be your second chance. You got this.) ";
             }
          
-        }
+        } 
  
-}
+ }
 
 

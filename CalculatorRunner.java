@@ -10,16 +10,25 @@ public class CalculatorRunner
     public static void main(String[] args)
     {
         Scanner input = new Scanner(System.in);
-        System.out.print("What was your weighted GPA?");
+        System.out.println("What was your weighted GPA?");
         double newGpa = input.nextDouble();
-        System.out.print("What was your highest SAT score?");
+        System.out.println("What was your highest SAT score?");
         int newSATScore = input.nextInt();
-        System.out.print("How many AP classes you have taken?");
+        System.out.println("How many AP classes you have taken?");
         int newNumOfAps = input.nextInt();
-        Colleges fit = new Colleges(newGpa, newSATScore, newNumOfAps);
+        System.out.println("How many of hours of community service have you done?");
+        int newCommunityService = input.nextInt();
+        System.out.println("Are you a good essay writer?(true = yes & false = no)");
+        boolean newEssays = input.nextBoolean();
+        System.out.println("Have you done anything that makes you stand out from the crowd?(true = yes & false = no)");
+        boolean newSpecialTrait = input.nextBoolean();
+        Colleges fit = new Colleges(newGpa, newSATScore, newNumOfAps, newCommunityService, newEssays, newSpecialTrait);
         fit.GpaCalculator();
         fit.ApCalculator();
-        fit.SATCalculator();
-        System.out.println(fit.RightFit());
+        fit.SATCalculator(); 
+        fit.Essays();
+        fit.SpecialTrait();
+        fit.CommunityServiceCalculator();
+        System.out.println("According to our highly statistical and completely flawless calculations, we have decided that the most appropriate school for you to attend is " + fit.RightFit());
     }
 }
